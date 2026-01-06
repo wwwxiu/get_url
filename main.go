@@ -239,7 +239,7 @@ func fetchUrl(url string, timeout int, verify bool) (int, string, error) {
 	return resp.StatusCode, "", nil
 }
 
-func findTitle(n *html.Node) string { // 独立 DFS 函数
+func findTitle(n *html.Node) string {
 	if n.Type == html.ElementNode && n.Data == "title" {
 		if n.FirstChild != nil {
 			return n.FirstChild.Data
